@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Diagnostics;
+using System.Threading;
 
 namespace Tribble_3
 {
@@ -39,16 +40,38 @@ namespace Tribble_3
 
         protected override void Initialize()
         {
+            Random speed = new Random();
+            int speedX, speedY;
+
+            speedX = speed.Next(0, 5);
+            speedY = speed.Next(0, 5);
+            speedG = new Vector2(speedX, speedY);
+
+            Thread.Sleep(15);
+
+            speedX = speed.Next(0, 5);
+            speedY = speed.Next(0, 5);
+            speedC = new Vector2(speedX, speedY);
+
+            Thread.Sleep(15);
+
+            speedX = speed.Next(0, 5);
+            speedY = speed.Next(0, 5);
+            speedB = new Vector2(speedX, speedY);
+
+            Thread.Sleep(15);
+
+            speedX = speed.Next(0, 5);
+            speedY = speed.Next(0, 5);
+            speedO = new Vector2(speedX, speedY);
+
+
             this.Window.Title = "Boing";
             Window.AllowUserResizing = false;
             greyR = new Rectangle(100, 10, 100, 100);
             creamR = new Rectangle(300, 300, 100, 100);
             brownR = new Rectangle(500, 400, 100, 100);
             orangeR = new Rectangle(800, 200, 100, 100);
-            speedG = new Vector2(0, 3);
-            speedC = new Vector2(3, 0);
-            speedB = new Vector2(4, 3);
-            speedO = new Vector2(3, 3);
             base.Initialize();
         }
 
